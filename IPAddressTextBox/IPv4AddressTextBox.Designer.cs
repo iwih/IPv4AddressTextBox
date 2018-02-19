@@ -1,4 +1,4 @@
-﻿namespace IPv4AddressTextBox
+﻿namespace IPv4Address
 {
     partial class IPv4AddressTextBox
     {

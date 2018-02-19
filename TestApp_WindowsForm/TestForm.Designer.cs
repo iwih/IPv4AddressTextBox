@@ -1,4 +1,6 @@
-﻿namespace TestApp_WindowsForm
+﻿using IPv4Address;
+
+namespace TestApp_WindowsForm
 {
     partial class TestForm
     {
@@ -33,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.iPv4AddressTextBox1 = new IPv4AddressTextBox.IPv4AddressTextBox();
+            this.iPv4AddressTextBox1 = new IPv4AddressTextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -106,7 +108,7 @@
 
         #endregion
 
-        private IPv4AddressTextBox.IPv4AddressTextBox iPv4AddressTextBox1;
+        private IPv4AddressTextBox iPv4AddressTextBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;

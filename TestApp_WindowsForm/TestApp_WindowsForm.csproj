@@ -79,9 +79,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IPAddressTextBox\IPv4AddressTextBox.csproj">
+    <ProjectReference Include="..\IPAddressTextBox\IPv4Address.csproj">
       <Project>{aa3cbe3c-134c-4f08-8960-319e2c6aa7a2}</Project>
-      <Name>IPv4AddressTextBox</Name>
+      <Name>IPv4Address</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

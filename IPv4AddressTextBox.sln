@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPv4AddressTextBox", "IPAddressTextBox\IPv4AddressTextBox.csproj", "{AA3CBE3C-134C-4F08-8960-319E2C6AA7A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPv4Address", "IPAddressTextBox\IPv4Address.csproj", "{AA3CBE3C-134C-4F08-8960-319E2C6AA7A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp_WindowsForm", "TestApp_WindowsForm\TestApp_WindowsForm.csproj", "{6D8368DA-5BA5-463C-B8AE-A91E422A6E20}"
 EndProject

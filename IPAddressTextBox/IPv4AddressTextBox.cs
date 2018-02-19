@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace IPv4AddressTextBox
+namespace IPv4Address
 {
     public partial class IPv4AddressTextBox : UserControl
     {
