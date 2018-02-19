@@ -8,13 +8,6 @@ namespace IPv4AddressTextBox
         public IPv4AddressTextBox()
         {
             InitializeComponent();
-            /*
-            ipDiv0.Font = Font;
-            ipDiv1.Font = Font;
-            ipDiv2.Font = Font;
-            ipDiv3.Font = Font;
-            */
-
         }
 
         private void ipDiv_KeyDown(object sender, KeyEventArgs e)
