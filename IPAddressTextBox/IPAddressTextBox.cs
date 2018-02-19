@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IPAddressTextBox
 {
-    public partial class UserControl1: UserControl
+    public partial class IPAddressTextBox: UserControl
     {
-        public UserControl1()
+        public IPAddressTextBox()
         {
             InitializeComponent();
         }
