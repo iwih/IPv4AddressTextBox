@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IPv4AddressTextBox")]
+[assembly: AssemblyTitle("TestApp_WindowsForm")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IPv4AddressTextBox")]
+[assembly: AssemblyProduct("TestApp_WindowsForm")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("aa3cbe3c-134c-4f08-8960-319e2c6aa7a2")]
+[assembly: Guid("6d8368da-5ba5-463c-b8ae-a91e422a6e20")]
 
 // Version information for an assembly consists of the following four values:
 //
