@@ -16,5 +16,18 @@ namespace TestApp_WindowsForm
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            iPv4AddressTextBox1.Text = textBox1.Text;
+            textBox2.Text = iPv4AddressTextBox1.Text;
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+            iPv4AddressTextBox1.Text = textBox1.Text;
+            textBox2.Text = iPv4AddressTextBox1.Text;
+        }
     }
 }

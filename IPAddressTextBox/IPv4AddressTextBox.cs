@@ -10,6 +10,48 @@ namespace IPv4AddressTextBox
             InitializeComponent();
         }
 
+        public override string Text
+        {
+            get => $"{ipDiv0.Text}.{ipDiv1.Text}.{ipDiv2.Text}.{ipDiv3.Text}";
+            set
+            {
+                ipDiv0.Clear();
+                ipDiv1.Clear();
+                ipDiv2.Clear();
+                ipDiv3.Clear();
+
+                var ipTokens = value.Split(new[] {'.'}, StringSplitOptions.RemoveEmptyEntries);
+                var counter = 0;
+                while ((counter < 4) && (counter < ipTokens.Length))
+                {
+                    var tokenParsedToInt = int.TryParse(ipTokens[counter], out var ipDivValue);
+                    if (tokenParsedToInt)
+                    {
+                        switch (counter)
+                        {
+                            case 0:
+                                ipDiv0.Text = ipDivValue.ToString();
+                                break;
+
+                            case 1:
+                                ipDiv1.Text = ipDivValue.ToString();
+                                break;
+
+                            case 2:
+                                ipDiv2.Text = ipDivValue.ToString();
+                                break;
+
+                            case 3:
+                                ipDiv3.Text = ipDivValue.ToString();
+                                break;
+                        }
+                    }
+
+                    counter++;
+                }
+            }
+        }
+
         private void ipDiv_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = IsNonAllowedKeyDown(e.KeyData);
@@ -114,7 +156,7 @@ namespace IPv4AddressTextBox
 
             //set cursor location to end of the division
             var lastCharacterPosition = textDivision.Length;
-            if(lastCharacterPosition >= 3)
+            if (lastCharacterPosition >= 3)
                 FocusNextIpDiv(senderTextBox);
             else
             {
