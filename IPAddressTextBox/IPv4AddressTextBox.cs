@@ -171,5 +171,16 @@ namespace IPv4Address
         {
             ((TextBox) sender).SelectAll();
         }
+
+        public new void Dispose()
+        {
+            ipDiv0?.Dispose();
+            ipDiv1?.Dispose();
+            ipDiv2?.Dispose();
+            ipDiv3?.Dispose();
+
+            if (!IsDisposed)
+                base.Dispose();
+        }
     }
 }
