@@ -61,17 +61,17 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(300, 50);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(190, 23);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ipDiv3
             // 
             this.ipDiv3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ipDiv3.Location = new System.Drawing.Point(237, 3);
+            this.ipDiv3.Location = new System.Drawing.Point(150, 0);
+            this.ipDiv3.Margin = new System.Windows.Forms.Padding(0);
             this.ipDiv3.MaxLength = 3;
-            this.ipDiv3.Multiline = true;
             this.ipDiv3.Name = "ipDiv3";
-            this.ipDiv3.Size = new System.Drawing.Size(60, 44);
+            this.ipDiv3.Size = new System.Drawing.Size(40, 22);
             this.ipDiv3.TabIndex = 3;
             this.ipDiv3.Text = "0";
             this.ipDiv3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -83,11 +83,11 @@
             // ipDiv2
             // 
             this.ipDiv2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ipDiv2.Location = new System.Drawing.Point(159, 3);
+            this.ipDiv2.Location = new System.Drawing.Point(100, 0);
+            this.ipDiv2.Margin = new System.Windows.Forms.Padding(0);
             this.ipDiv2.MaxLength = 3;
-            this.ipDiv2.Multiline = true;
             this.ipDiv2.Name = "ipDiv2";
-            this.ipDiv2.Size = new System.Drawing.Size(60, 44);
+            this.ipDiv2.Size = new System.Drawing.Size(38, 22);
             this.ipDiv2.TabIndex = 2;
             this.ipDiv2.Text = "0";
             this.ipDiv2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -99,11 +99,11 @@
             // ipDiv1
             // 
             this.ipDiv1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ipDiv1.Location = new System.Drawing.Point(81, 3);
+            this.ipDiv1.Location = new System.Drawing.Point(50, 0);
+            this.ipDiv1.Margin = new System.Windows.Forms.Padding(0);
             this.ipDiv1.MaxLength = 3;
-            this.ipDiv1.Multiline = true;
             this.ipDiv1.Name = "ipDiv1";
-            this.ipDiv1.Size = new System.Drawing.Size(60, 44);
+            this.ipDiv1.Size = new System.Drawing.Size(38, 22);
             this.ipDiv1.TabIndex = 1;
             this.ipDiv1.Text = "0";
             this.ipDiv1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -116,7 +116,7 @@
             // 
             this.dotSeperator2.AutoSize = true;
             this.dotSeperator2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dotSeperator2.Location = new System.Drawing.Point(222, 33);
+            this.dotSeperator2.Location = new System.Drawing.Point(138, 6);
             this.dotSeperator2.Margin = new System.Windows.Forms.Padding(0);
             this.dotSeperator2.Name = "dotSeperator2";
             this.dotSeperator2.Size = new System.Drawing.Size(12, 17);
@@ -128,7 +128,7 @@
             // 
             this.dotSeperator1.AutoSize = true;
             this.dotSeperator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dotSeperator1.Location = new System.Drawing.Point(144, 33);
+            this.dotSeperator1.Location = new System.Drawing.Point(88, 6);
             this.dotSeperator1.Margin = new System.Windows.Forms.Padding(0);
             this.dotSeperator1.Name = "dotSeperator1";
             this.dotSeperator1.Size = new System.Drawing.Size(12, 17);
@@ -139,11 +139,11 @@
             // ipDiv0
             // 
             this.ipDiv0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ipDiv0.Location = new System.Drawing.Point(3, 3);
+            this.ipDiv0.Location = new System.Drawing.Point(0, 0);
+            this.ipDiv0.Margin = new System.Windows.Forms.Padding(0);
             this.ipDiv0.MaxLength = 3;
-            this.ipDiv0.Multiline = true;
             this.ipDiv0.Name = "ipDiv0";
-            this.ipDiv0.Size = new System.Drawing.Size(60, 44);
+            this.ipDiv0.Size = new System.Drawing.Size(38, 22);
             this.ipDiv0.TabIndex = 0;
             this.ipDiv0.Text = "0";
             this.ipDiv0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -156,7 +156,7 @@
             // 
             this.dotSeperator0.AutoSize = true;
             this.dotSeperator0.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dotSeperator0.Location = new System.Drawing.Point(66, 33);
+            this.dotSeperator0.Location = new System.Drawing.Point(38, 6);
             this.dotSeperator0.Margin = new System.Windows.Forms.Padding(0);
             this.dotSeperator0.Name = "dotSeperator0";
             this.dotSeperator0.Size = new System.Drawing.Size(12, 17);
@@ -170,7 +170,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "IPv4AddressTextBox";
-            this.Size = new System.Drawing.Size(300, 50);
+            this.Size = new System.Drawing.Size(190, 23);
+            this.Resize += new System.EventHandler(this.IPv4AddressTextBox_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

@@ -8,6 +8,13 @@ namespace IPv4Address
         public IPv4AddressTextBox()
         {
             InitializeComponent();
+
+            SetHeightToTextBoxesHeight();
+        }
+
+        private void SetHeightToTextBoxesHeight()
+        {
+            Height = ipDiv0.Height + ipDiv0.Margin.Top + ipDiv0.Margin.Bottom;
         }
 
         public override string Text
@@ -181,6 +188,11 @@ namespace IPv4Address
 
             if (!IsDisposed)
                 base.Dispose();
+        }
+
+        private void IPv4AddressTextBox_Resize(object sender, EventArgs e)
+        {
+            SetHeightToTextBoxesHeight();
         }
     }
 }
