@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018 Osama Alwash
+Copyright (c) 2018-2019 Osama Alwash, Peter Varney
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
