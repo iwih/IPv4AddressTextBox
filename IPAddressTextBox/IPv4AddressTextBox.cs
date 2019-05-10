@@ -1,4 +1,12 @@
-﻿using System;
+﻿/* 
+ *Copyright (C) 2018-2019 Osama Alwash, Peter Varney - All Rights Reserved
+ * You may use, distribute and modify this code under the
+ * terms of the MIT license, 
+ *
+ * You should have received a copy of the MIT license with
+ * this file. If not, visit : https://github.com/iwih/IPv4AddressTextBox
+ */
+using System;
 using System.Windows.Forms;
 
 namespace IPv4Address
@@ -8,13 +16,57 @@ namespace IPv4Address
         public IPv4AddressTextBox()
         {
             InitializeComponent();
-
-            SetHeightToTextBoxesHeight();
         }
 
-        private void SetHeightToTextBoxesHeight()
+        public byte this[int index] 
         {
-            Height = ipDiv0.Height + ipDiv0.Margin.Top + ipDiv0.Margin.Bottom;
+            get
+            {
+                if (index >= 0 & index <= 3) return this.GetAddressBytes()[index];
+                else throw new IndexOutOfRangeException("Index starts at 0 and must not exceed 3");
+            }
+            set
+            {
+                switch (index)
+                {
+                    case 0:
+                        ipDiv0.Text = value.ToString();
+                        break;
+                    case 1:
+                        ipDiv1.Text = value.ToString();
+                        break;
+                    case 2:
+                        ipDiv2.Text = value.ToString();
+                        break;
+                    case 3:
+                        ipDiv3.Text = value.ToString();
+                        break;
+                    default:
+                        throw new IndexOutOfRangeException("Index starts at 0 and must not exceed 3");
+                }
+            }
+        }
+
+        public byte[] GetAddressBytes()
+        {
+            byte[] textInput = new byte[4];
+            textInput[0] = Convert.ToByte(ipDiv0.Text);
+            textInput[1] = Convert.ToByte(ipDiv1.Text);
+            textInput[2] = Convert.ToByte(ipDiv2.Text);
+            textInput[3] = Convert.ToByte(ipDiv3.Text);
+            return textInput;
+        }
+
+        public System.Net.IPAddress IPAddress
+        {
+            get => new System.Net.IPAddress(this.GetAddressBytes());
+            set
+            {
+                this[0] = value.GetAddressBytes()[0];
+                this[1] = value.GetAddressBytes()[1];
+                this[2] = value.GetAddressBytes()[2];
+                this[3] = value.GetAddressBytes()[3];
+            }
         }
 
         public override string Text
@@ -68,6 +120,12 @@ namespace IPv4Address
                 FocusNextIpDiv((TextBox) sender);
                 e.SuppressKeyPress = true;
             }
+
+            if ((e.KeyData == Keys.Left & ((TextBox)sender).SelectionStart == 0) 
+                | (e.KeyData == Keys.Back & Convert.ToByte(((TextBox)sender).Text)==0))
+            { FocusPreviousIpDiv((TextBox)sender); }
+            if (e.KeyData == Keys.Right & ((TextBox)sender).SelectionStart == ((TextBox)sender).Text.Length)
+            { FocusNextIpDiv((TextBox)sender); }
         }
 
         private void FocusNextIpDiv(TextBox sender)
@@ -81,6 +139,21 @@ namespace IPv4Address
                 nextDiv = ipDiv2;
             else if (senderName == ipDiv2.Name)
                 nextDiv = ipDiv3;
+
+            nextDiv?.Focus();
+        }
+
+        private void FocusPreviousIpDiv(TextBox sender)
+        {
+            var senderName = sender.Name;
+            TextBox nextDiv = null;
+
+            if (senderName == ipDiv3.Name)
+                nextDiv = ipDiv2;
+            else if (senderName == ipDiv2.Name)
+                nextDiv = ipDiv1;
+            else if (senderName == ipDiv1.Name)
+                nextDiv = ipDiv0;
 
             nextDiv?.Focus();
         }
@@ -174,7 +247,7 @@ namespace IPv4Address
             _surpressTextChangedEvent = false;
         }
 
-        private void ipDiv0_Enter(object sender, EventArgs e)
+        private void ipDiv_Enter(object sender, EventArgs e)
         {
             ((TextBox) sender).SelectAll();
         }
@@ -190,9 +263,11 @@ namespace IPv4Address
                 base.Dispose();
         }
 
-        private void IPv4AddressTextBox_Resize(object sender, EventArgs e)
+        private void IPv4AddressTextBox_FontChanged(object sender, EventArgs e)//new
         {
-            SetHeightToTextBoxesHeight();
+            dotSeperator0.Font = new System.Drawing.Font(dotSeperator0.Font.Name, this.Font.Size, dotSeperator0.Font.Style);
+            dotSeperator1.Font = new System.Drawing.Font(dotSeperator1.Font.Name, this.Font.Size, dotSeperator1.Font.Style);
+            dotSeperator2.Font = new System.Drawing.Font(dotSeperator2.Font.Name, this.Font.Size, dotSeperator2.Font.Style);
         }
     }
 }
